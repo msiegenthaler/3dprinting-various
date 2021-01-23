@@ -2,9 +2,9 @@ $fs = 0.1;
 $fa = 1;
 delta = $preview ? 0.005 : 0; //for better preview rendering
 
-rail_width = 5.3;
+rail_width = 5.5;
 rail_inside_width = 10.0;
-rail_depth = 3.2;
+rail_depth = 3.6;
 rail_top_strength = 1.2;
 rail_d = 20.0;
 rail_d_cut = 18.1;
@@ -15,17 +15,21 @@ rail_depth_gap = 0.5;
 rail_margin = 0;
 
 l=8;
+holder_body(l);
 
-rail_connector(l);
-
-x=rail_d/2;
-x2 = 5;
-z_top = 4;
-z_bottom = rail_d_cut/2;
-difference() {
-  translate([x/2-x2/2,0,-z_bottom/2+z_top/2])
-    cube([x+x2,l,z_top+z_bottom], center=true);
-  rail_outline(10+2*delta);
+module holder_body(l) {
+  x = rail_d/2+3;
+  x2 = 5;
+  z_top = 4;
+  z_bottom = rail_d_cut/5 * 4;
+  union() {
+    rail_connector(l);
+    difference() {
+      translate([x/2-x2/2,0,-z_bottom/2+z_top/2])
+        cube([x+x2, l, z_top+z_bottom], center=true);
+      rail_outline(10+2*delta);
+    }
+  }
 }
 
 module rail_outline(l) {
