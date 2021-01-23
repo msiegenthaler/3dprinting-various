@@ -4,20 +4,20 @@ delta = $preview ? 0.005 : 0; //for better preview rendering
 
 rail_width = 5.3;
 rail_inside_width = 10.0;
-rail_depth = 4.5;
-rail_top_strength = 1.5;
+rail_depth = 3.2;
+rail_top_strength = 1.2;
 rail_d = 20.0;
 rail_d_cut = 18.1;
 
 rail_side_gap = 1;
 rail_inside_side_gap = 2;
 rail_depth_gap = 0.5;
-rail_margin = 0.5;
+rail_margin = 0;
 
+l=6;
 
-rail_connector(10);
+rail_connector(l);
 
-l=10;
 x=rail_d/2;
 x2 = 4.6;
 z_top = 4;
