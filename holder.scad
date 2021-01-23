@@ -9,17 +9,17 @@ rail_top_strength = 1.2;
 rail_d = 20.0;
 rail_d_cut = 18.1;
 
-rail_side_gap = 1;
+rail_side_gap = 0.15;
 rail_inside_side_gap = 2;
 rail_depth_gap = 0.5;
 rail_margin = 0;
 
-l=6;
+l=8;
 
 rail_connector(l);
 
 x=rail_d/2;
-x2 = 4.6;
+x2 = 5;
 z_top = 4;
 z_bottom = rail_d_cut/2;
 difference() {
