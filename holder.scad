@@ -2,9 +2,9 @@ $fs = 0.1;
 $fa = 1;
 delta = $preview ? 0.005 : 0; //for better preview rendering
 
-rail_width = 5.5;
+rail_width = 5.8;
 rail_inside_width = 10.0;
-rail_depth = 3.6;
+rail_depth = 3.9;
 rail_top_strength = 1.2;
 rail_d = 20.0;
 rail_d_cut = 18.1;
@@ -14,11 +14,30 @@ rail_inside_side_gap = 2;
 rail_depth_gap = 0.5;
 rail_margin = 0;
 
-l=8;
-holder_body(l);
 
-module holder_body(l) {
-  x = rail_d/2+3;
+l=10;
+difference() {
+  holder_body(4,l);
+  translate([rail_d/2,0,-rail_d_cut/2+2]) rotate([0,-90,0])
+    screw_negative(3);
+}
+
+
+module screw_negative(l) {
+  d1 = 3.1;
+  d2 = 5.9;
+  l1 = 2.8;
+  translate([0,0,-l1]) union() {
+    translate([0,0,l1-delta])
+      cylinder(d=d2, h=l);
+    cylinder(d1=d1, d2=d2, h=l1);
+    translate([0,0,-l+delta])
+      cylinder(d=d1, h=l);
+  }
+}
+
+module holder_body(t,l) {
+  x = rail_d/2+t;
   x2 = 5;
   z_top = 4;
   z_bottom = rail_d_cut/5 * 4;
