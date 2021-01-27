@@ -1,13 +1,14 @@
 delta = $preview ? 0.005 : 0; //for better preview rendering
 
-inner_x = 12.0;
-inner_y = 16.5;
+gap  = 0.3;
+inner_x = 12.0 - gap;
+inner_y = 16.5 - gap;
 
 outer_x = 15.3;
 outer_y = 20.4;
 
-thickness = 0.4 * 5;
-in_length = 15;
+thickness = 0.2 * 8;
+in_length = 10;
 wall = 1;
 
 translate([0, 0, -thickness/2])
