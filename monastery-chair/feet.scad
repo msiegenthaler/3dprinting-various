@@ -1,6 +1,6 @@
 delta = $preview ? 0.005 : 0; //for better preview rendering
 
-gap  = 0.3;
+gap  = 0.15;
 inner_x = 12.0 - gap;
 inner_y = 16.5 - gap;
 
