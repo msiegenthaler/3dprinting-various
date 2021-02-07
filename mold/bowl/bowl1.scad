@@ -1,10 +1,18 @@
 include <vase_lowpoly.scad>
 
-bowl();
+d=150;
+h=97;
+
+intersection() { // cut off at the top to exact size
+  translate([0,0,h/2])
+    cube([d*2, d*2, h], center=true);
+  bowl();
+}
+//cylinder(d=70, h=h);
 
 //expected size
 *translate([0,0,50]) color("red")
-  cube([150, 150, 100], center=true);
+  cube([d, d, h], center=true);
 
 
 module bowl() {
