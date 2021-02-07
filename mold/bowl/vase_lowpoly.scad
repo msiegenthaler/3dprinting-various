@@ -1,13 +1,19 @@
 
-
-
 /*
 LOW POLY VASE FACTORY
 Fernando Jerez 2017
 License: CC
 see: https://www.thingiverse.com/thing:2638924/files
 */
-module vase(shape, radius, spikes, sides, levels, twist, z_scale=1){
+module vase(
+    shape,    //[cylinder: Cylinder, vase1:Vase, vase2:Vase 2, glass: Glass, bowl:Bowl, cup1: Cup, cup2: Cup 2, cone: Cone ]
+    radius,   //Radius 20 to 100
+    spikes,   //Spike size -20 to 20
+    sides,    //Sides 3 to 30
+    levels,   //Levels 3 to 30
+    twist,    //Twisting factor, -1 to 1
+    z_scale=1 //z-scale ("height")
+){
     altura = 180 - 180%levels; // z-steps
     step = floor(180/levels); // resolution in Z (1 is the best and slower)
     
