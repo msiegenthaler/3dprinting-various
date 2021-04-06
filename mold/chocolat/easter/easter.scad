@@ -51,8 +51,8 @@ module negative() {
   translate([20,12,0]) scale([bunny_scale, bunny_scale, 1]) mirror([1,0,0])
     rotate([90,0,0]) import("bunny.stl");
 
-  translate([-8,24,-1]) linear_extrude(2) rotate([0,0,180]) mirror([0,0,1])
-    text("2021", 12, font="Arial:style=Bold");
+  translate([-44,24,-1]) linear_extrude(2) rotate([0,0,180]) mirror([1,0,0])
+    text("MAYA", 11, font="Arial:style=Bold");
 }
 
 module positive() {
