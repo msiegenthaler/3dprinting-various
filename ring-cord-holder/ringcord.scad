@@ -2,16 +2,16 @@ $fs = 0.1;
 $fa = 1;
 delta = $preview ? 0.1 : 0; //for better preview rendering
 
-h = 65;
-h_mid = 35;
-w = 15;
-d_cord = 5.5;
-d_top = 4;
+h = 85;
+h_mid = 55;
+w = 18;
+d_cord = 7;
+d_top = 3;
 d=d_cord+d_top;
 
 
-screw_offset = 8;
-screw_depth_offset = 2.7;
+screw_offset = 12;
+screw_depth_offset = 2.35;
 difference() {
   base();
   translate([0,screw_offset,screw_depth_offset])
